@@ -1,5 +1,6 @@
 // init basic static component
 var React = require('react');
+
 var WeatherForm = require('WeatherForm');
 var WeatherMessage = require('WeatherMessage');
 

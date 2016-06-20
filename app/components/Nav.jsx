@@ -14,4 +14,5 @@ var Nav = React.createClass({
   }
 });
 
+// allows us to access this by loading it into other files using 'require'
 module.exports = Nav;

@@ -19776,6 +19776,7 @@
 	  }
 	});
 
+	// allows us to access this by loading it into other files using 'require'
 	module.exports = Nav;
 
 /***/ },
@@ -25045,6 +25046,7 @@
 
 	// init basic static component
 	var React = __webpack_require__(1);
+
 	var WeatherForm = __webpack_require__(219);
 	var WeatherMessage = __webpack_require__(220);
 
@@ -25075,6 +25077,7 @@
 
 	"use strict";
 
+	// init basic static component
 	var React = __webpack_require__(1);
 
 	var WeatherForm = React.createClass({
@@ -25098,6 +25101,7 @@
 	  }
 	});
 
+	// allows us to access this by loading it into other files using 'require'
 	module.exports = WeatherForm;
 
 /***/ },

@@ -1,3 +1,4 @@
+// init basic static component
 var React = require('react');
 
 var WeatherForm = React.createClass({
@@ -13,4 +14,5 @@ var WeatherForm = React.createClass({
   }
 });
 
+// allows us to access this by loading it into other files using 'require'
 module.exports = WeatherForm;
