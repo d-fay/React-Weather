@@ -6,11 +6,12 @@ var Main = React.createClass({
     return (
       <div>
         <Nav/>
-        // INSERT COMPONENT(S) TO DISPLAY
         <h2>Main Component</h2>
+        {this.props.children}
       </div>
     );
   }
 });
 
+// allows us to access this by loading it into other files using 'require'
 module.exports = Main;

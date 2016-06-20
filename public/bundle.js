@@ -48,7 +48,11 @@
 
 	var React = __webpack_require__(1);
 	var ReactDOM = __webpack_require__(158);
+
 	var Main = __webpack_require__(159);
+	var Weather = __webpack_require__(218);
+	var About = __webpack_require__(219);
+	var Examples = __webpack_require__(220);
 
 	// Create variable Route => route property 'react-router'
 
@@ -57,7 +61,7 @@
 	var Route = _require.Route;
 	var Router = _require.Router;
 	var IndexRoute = _require.IndexRoute;
-	var hashHistory = _require.hashHistory; // ES6 Restructuring Syntax
+	var hashHistory = _require.hashHistory; // ES6 Destructuring Syntax
 	// EXAMPLE otherwise:
 	// var Route = require('react-router').Route;
 	// var Router = require('react-router').Router;
@@ -80,7 +84,13 @@
 	ReactDOM.render(React.createElement(
 	  Router,
 	  { history: hashHistory },
-	  React.createElement(Route, { path: '/', component: Main })
+	  React.createElement(
+	    Route,
+	    { path: '/', component: Main },
+	    React.createElement(Route, { path: 'about', component: About }),
+	    React.createElement(Route, { path: 'examples', component: Examples }),
+	    React.createElement(IndexRoute, { component: Weather })
+	  )
 	), document.getElementById('app'));
 
 /***/ },
@@ -19708,16 +19718,17 @@
 	      'div',
 	      null,
 	      React.createElement(Nav, null),
-	      '// INSERT COMPONENT(S) TO DISPLAY',
 	      React.createElement(
 	        'h2',
 	        null,
 	        'Main Component'
-	      )
+	      ),
+	      this.props.children
 	    );
 	  }
 	});
 
+	// allows us to access this by loading it into other files using 'require'
 	module.exports = Main;
 
 /***/ },
@@ -19728,16 +19739,37 @@
 
 	var React = __webpack_require__(1);
 
+	var _require = __webpack_require__(161);
+
+	var Link = _require.Link;
+
+
 	var Nav = React.createClass({
 	  displayName: 'Nav',
 
 	  render: function render() {
-	    return(
-	      // INSERT COMPONENT(S) TO DISPLAY
+	    return React.createElement(
+	      'div',
+	      null,
 	      React.createElement(
 	        'h2',
 	        null,
 	        'Nested Nav Component'
+	      ),
+	      React.createElement(
+	        Link,
+	        { to: '/' },
+	        'Get Weather'
+	      ),
+	      React.createElement(
+	        Link,
+	        { to: '/about' },
+	        'About'
+	      ),
+	      React.createElement(
+	        Link,
+	        { to: '/examples' },
+	        'Examples'
 	      )
 	    );
 	  }
@@ -25003,6 +25035,78 @@
 
 	exports['default'] = _createRouterHistory2['default'](_historyLibCreateHashHistory2['default']);
 	module.exports = exports['default'];
+
+/***/ },
+/* 218 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	// init basic static component
+	var React = __webpack_require__(1);
+
+	var Weather = React.createClass({
+	  displayName: 'Weather',
+
+	  render: function render() {
+	    return React.createElement(
+	      'h3',
+	      null,
+	      'Future Weather Component Content'
+	    );
+	  }
+	});
+
+	// allows us to access this by loading it into other files using 'require'
+	module.exports = Weather;
+
+/***/ },
+/* 219 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	// init basic static component
+	var React = __webpack_require__(1);
+
+	var About = React.createClass({
+	  displayName: 'About',
+
+	  render: function render() {
+	    return React.createElement(
+	      'h3',
+	      null,
+	      'Future About Component Content'
+	    );
+	  }
+	});
+
+	// allows us to access this by loading it into other files using 'require'
+	module.exports = About;
+
+/***/ },
+/* 220 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	// init basic static component
+	var React = __webpack_require__(1);
+
+	var Examples = React.createClass({
+	  displayName: 'Examples',
+
+	  render: function render() {
+	    return React.createElement(
+	      'h3',
+	      null,
+	      'Future Examples Component Content'
+	    );
+	  }
+	});
+
+	// allows us to access this by loading it into other files using 'require'
+	module.exports = Examples;
 
 /***/ }
 /******/ ]);
